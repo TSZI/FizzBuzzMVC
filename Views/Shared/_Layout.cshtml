@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - FIZZ BUZZ MVC: A Coding Project By Troy Szatkowski</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+	<script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="~/img/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="~/img/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="~/img/favicon-16x16.png" />
+	<link rel="manifest" href="~/img/site.webmanifest" />
+</head>
+<body class="d-flex flex-column h-100">
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FizzBuzzMVC</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FBPage">FizzBuzz</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main id="content" class="flex-shrink-0">
+		@RenderBody()
+	</main>
+
+	@*<footer class="border-top footer text-muted">
+		<div class="container">
+			&copy; 2021 - FizzBuzzMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+		</div>
+	</footer>*@
+
+	<footer class="footer mt-auto py-3 bg-dark sticky-footer">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-lg-3 gy-3">
+				<div class="col d-flex align-items-center text-light order-last order-lg-first">
+					<div><span class="text-muted">&copy;2021</span> Troy Mitchel | tms@tmitchel.com</div>
+				</div>
+				<div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
+					<img src="~/img/logo_light.svg" alt="Harper Forester Logo" height="24" />
+				</div>
+				<div class="col d-flex justify-content-start justify-content-lg-end align-items-center social">
+					<div class="row">
+						<div class="col">
+							<a href="https://www.linkedin.com/in/troy-m-szatkowski/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+						</div>
+						<div class="col">
+							<a href="https://github.com/TSZI" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

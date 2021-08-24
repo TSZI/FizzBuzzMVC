@@ -1,0 +1,70 @@
+﻿@model FizzBuzzMVC.Models.FizzBuzz
+
+<div class="container mt-0">
+	<div class="row row-cols-1 row-cols-lg-2">
+		<div class="col border-end border-2">
+			<h1>Fizz Buzz App</h1>
+			<p class="lead">
+				This application will consider the two numbers entered and for each number etween 1 and 100.
+				It will print FIZZ for the numbers that are divisible by the first number. BUZZ will be printed
+				for the numbers divisible by the second numer. <strong>"FizzBuzz"</strong> for numbers divisible by both and
+				simply print the number if it is not divisible by either.
+			</p>
+
+			<h1 class="mt-5">Instructions</h1>
+			<p class="lead">
+				Enter 2 numbers. The first number will be used to evaluate Fizz.
+				The second number will be used to evaluate Buzz and FizzBuzz will be determined based on
+				the combination of the two numbers.
+			</p>
+		</div>
+		<div class="col">
+			<form asp-controller="Home" asp-action="FBPage" method="post">
+				<h4>Enter Values</h4>
+				<div class="row gx-3 gy-2">
+					<div class="col-6">
+						<label asp-for="FizzValue">Fizz Value</label>
+						<input id="txtFizz" class="form-control" type="number" asp-for="FizzValue" value=@Model.FizzValue placeholder="Enter Fizz"/>
+					</div>
+					<div class="col-6">
+						<label asp-for="BuzzValue">Buzz Value</label>
+						<input id="txtBuzz" class="form-control" type="number" asp-for="BuzzValue" value=@Model.BuzzValue placeholder="Enter Buzz"/>
+					</div>
+					<div class="col-12 d-flex justify-content-end mt-3">
+						<button id="btnSubmit" type="submit" class="btn btn-primary btn-lg">Buzz It</button>
+					</div>
+				</div>
+			</form>
+
+			<h1 class="mt-5 border-bottom border-2">Results</h1>
+			<div id="alert" class="alert alert-danger d-none show fade" role="alert">
+				<h4 class="alert-heading">Error</h4>
+				<hr />
+				<p id="alertMsg"></p>
+			</div>
+			<div class="table-responsive">
+				@if (Model.Result.Count > 0)
+				{
+					<table class="table table-striped w-100">
+						<thead>
+							<tr><th colspan="5">Fizz Buzz Results</th></tr>
+						</thead>
+						<tbody>
+							@for (int i = 0; i < Model.Result.Count(); i += 5)
+							{
+								<tr>
+									<td class="@Model.Result[i]">@Model.Result[i]</td>
+									<td class="@Model.Result[i + 1]">@Model.Result[i + 1]</td>
+									<td class="@Model.Result[i + 2]">@Model.Result[i + 2]</td>
+									<td class="@Model.Result[i + 3]">@Model.Result[i + 3]</td>
+									<td class="@Model.Result[i + 4]">@Model.Result[i + 4]</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				}
+
+			</div>
+		</div>
+	</div>
+</div>

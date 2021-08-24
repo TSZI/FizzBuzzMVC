@@ -1,0 +1,125 @@
+﻿:root {
+    --primary-color: #292929;
+    --secondary-color: #0faea5;
+    --dark-color: #292929;
+    --white-color: #e8ebe9;
+}
+/*
+html {
+    position: relative;
+    min-height: 100%;
+}*/
+
+body {
+    color: var(--dark-color);
+}
+
+nav {
+    background-color: var(--dark-color);
+}
+
+footer {
+    background-color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+main .logo {
+    max-width: 700px;
+    max-height: 550px;
+}
+
+/*.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}*/
+
+footer {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+    footer .social a {
+        color: var(--white-color);
+        opacity: 0.75;
+        transition: all 0.3s ease-in-out;
+    }
+
+        footer .social a:hover {
+            color: var(--secondary-color);
+            opacity: 1;
+        }
+
+main > .container {
+    padding: 60px 15px 0;
+}
+
+.sticky-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.bs-icon {
+    color: purple;
+}
+
+.js-icon {
+    color: #e4d407;
+}
+
+.html5-icon {
+    color: orangered;
+}
+
+.css-icon {
+    color: rgb(11, 82, 214);
+}
+
+.checklist li i {
+    color: var(--secondary-color);
+}
+
+.FizzBuzz {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+.Fizz {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.Buzz {
+    color: darkblue;
+    font-weight: bold;
+}
+
+/* PRISM */
+code[class*='language-'],
+pre[class*='language-'] {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.csharp-icon {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 3rem;
+    padding: 7px 10px;
+    background: #b023b0;
+    color: #fff;
+    border-radius: 10px;
+}
